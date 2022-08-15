@@ -12,6 +12,10 @@
 		1767C21428AA222F00DDA04E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1767C21228AA222F00DDA04E /* Main.storyboard */; };
 		1767C21628AA223100DDA04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1767C21528AA223100DDA04E /* Assets.xcassets */; };
 		1767C21928AA223100DDA04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1767C21728AA223100DDA04E /* LaunchScreen.storyboard */; };
+		1767C22328AA264F00DDA04E /* GenerateQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767C22228AA264F00DDA04E /* GenerateQRViewController.swift */; };
+		1767C22628AA34E600DDA04E /* SwiftQRCodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 1767C22528AA34E600DDA04E /* SwiftQRCodeScanner */; };
+		1767C22828AA3AF000DDA04E /* PresentContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767C22728AA3AF000DDA04E /* PresentContentViewController.swift */; };
+		1767C22A28AA40D900DDA04E /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767C22928AA40D900DDA04E /* URL+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,9 @@
 		1767C21528AA223100DDA04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1767C21828AA223100DDA04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1767C21A28AA223100DDA04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1767C22228AA264F00DDA04E /* GenerateQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateQRViewController.swift; sourceTree = "<group>"; };
+		1767C22728AA3AF000DDA04E /* PresentContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentContentViewController.swift; sourceTree = "<group>"; };
+		1767C22928AA40D900DDA04E /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1767C22628AA34E600DDA04E /* SwiftQRCodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +64,9 @@
 			children = (
 				1767C20C28AA222F00DDA04E /* AppDelegate.swift */,
 				1767C21028AA222F00DDA04E /* ViewController.swift */,
+				1767C22228AA264F00DDA04E /* GenerateQRViewController.swift */,
+				1767C22728AA3AF000DDA04E /* PresentContentViewController.swift */,
+				1767C22928AA40D900DDA04E /* URL+Extension.swift */,
 				1767C21228AA222F00DDA04E /* Main.storyboard */,
 				1767C21528AA223100DDA04E /* Assets.xcassets */,
 				1767C21728AA223100DDA04E /* LaunchScreen.storyboard */,
@@ -80,6 +91,9 @@
 			dependencies = (
 			);
 			name = "quick-response";
+			packageProductDependencies = (
+				1767C22528AA34E600DDA04E /* SwiftQRCodeScanner */,
+			);
 			productName = "quick-response";
 			productReference = 1767C20928AA222F00DDA04E /* quick-response.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 1767C20028AA222E00DDA04E;
+			packageReferences = (
+				1767C22428AA34E600DDA04E /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */,
+			);
 			productRefGroup = 1767C20A28AA222F00DDA04E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,8 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1767C22828AA3AF000DDA04E /* PresentContentViewController.swift in Sources */,
 				1767C21128AA222F00DDA04E /* ViewController.swift in Sources */,
 				1767C20D28AA222F00DDA04E /* AppDelegate.swift in Sources */,
+				1767C22A28AA40D900DDA04E /* URL+Extension.swift in Sources */,
+				1767C22328AA264F00DDA04E /* GenerateQRViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +306,8 @@
 				DEVELOPMENT_TEAM = 2DP7F344NX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "quick-response/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs access to scan QR-codes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The app needs access to support reading QR-codes from photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -314,6 +336,8 @@
 				DEVELOPMENT_TEAM = 2DP7F344NX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "quick-response/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs access to scan QR-codes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The app needs access to support reading QR-codes from photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -354,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1767C22428AA34E600DDA04E /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vinodiOS/SwiftQRCodeScanner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1767C22528AA34E600DDA04E /* SwiftQRCodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1767C22428AA34E600DDA04E /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */;
+			productName = SwiftQRCodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1767C20128AA222E00DDA04E /* Project object */;
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9pZ-iJ-sNB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="r8f-xa-H2N">
+            <objects>
+                <navigationController id="9pZ-iJ-sNB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bGs-JO-dX5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ypv-gu-23U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ia-FO-G5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-739" y="84"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -16,9 +32,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xra-Ni-g89">
-                                <rect key="frame" x="191" y="437.5" width="32.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn8-gt-1se">
+                                <rect key="frame" x="64" y="324" width="286" height="50"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uIC-M6-mYD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Generate QR-code">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="generateQRButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rx4-Kh-YaL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR4-kP-O0W">
+                                <rect key="frame" x="64" y="406" width="286" height="50"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rIS-tj-N1D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Scan QR-code">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="scanQRButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lGG-ZQ-D7j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a simple prototype to show how an app can share &quot;offline&quot; content trough QR-codes. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xra-Ni-g89">
+                                <rect key="frame" x="32" y="152" width="350" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -26,19 +82,115 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Xra-Ni-g89" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MCO-d5-vmS"/>
-                            <constraint firstItem="Xra-Ni-g89" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aqR-e9-snr"/>
+                            <constraint firstItem="KR4-kP-O0W" firstAttribute="top" secondItem="Xn8-gt-1se" secondAttribute="bottom" constant="32" id="2Zl-4Q-WdB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xn8-gt-1se" secondAttribute="trailing" constant="64" id="Bvp-C9-lH2"/>
+                            <constraint firstItem="Xn8-gt-1se" firstAttribute="top" secondItem="Xra-Ni-g89" secondAttribute="bottom" constant="100" id="Ovz-fn-MEs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KR4-kP-O0W" secondAttribute="trailing" constant="64" id="VEt-Ek-vHV"/>
+                            <constraint firstItem="Xra-Ni-g89" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="YRk-v7-c57"/>
+                            <constraint firstItem="Xra-Ni-g89" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="cP8-Pf-GJc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xra-Ni-g89" secondAttribute="trailing" constant="32" id="efG-HH-pJ3"/>
+                            <constraint firstItem="Xn8-gt-1se" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="nQA-1e-OZi"/>
+                            <constraint firstItem="KR4-kP-O0W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="tvR-PU-PhK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SLI-4L-ULu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="84"/>
         </scene>
+        <!--Generate QR-->
+        <scene sceneID="cAA-kt-djv">
+            <objects>
+                <viewController storyboardIdentifier="GenerateQRViewController" title="Generate QR" id="z7y-Pd-CFX" customClass="GenerateQRViewController" customModule="quick_response" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c2r-UP-fbn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fxF-v6-BA7">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="JYp-tr-uVd"/>
+                                    <constraint firstAttribute="width" constant="240" id="hew-H7-jXb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oS2-4Q-TcO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fxF-v6-BA7" firstAttribute="centerY" secondItem="c2r-UP-fbn" secondAttribute="centerY" id="fdx-vw-Thm"/>
+                            <constraint firstItem="fxF-v6-BA7" firstAttribute="centerX" secondItem="c2r-UP-fbn" secondAttribute="centerX" id="rN8-it-vWh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XNj-Nx-CZo"/>
+                    <connections>
+                        <outlet property="qrCodeImageView" destination="fxF-v6-BA7" id="dFh-P3-1ky"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPq-dv-X34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="84"/>
+        </scene>
+        <!--Present Content View Controller-->
+        <scene sceneID="D2C-1L-H13">
+            <objects>
+                <viewController storyboardIdentifier="PresentContentViewController" id="Vyg-yQ-Y2b" customClass="PresentContentViewController" customModule="quick_response" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wad-Ow-uOU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qOH-ZY-Eb6">
+                                <rect key="frame" x="32" y="362" width="350" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="bEA-Ad-T3q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRa-ki-Bdb">
+                                <rect key="frame" x="64" y="269" width="286" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals vector created by rawpixel.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKk-Uv-O5H">
+                                <rect key="frame" x="79" y="829" width="256.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Nw-Wn-uWL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qOH-ZY-Eb6" firstAttribute="centerX" secondItem="wad-Ow-uOU" secondAttribute="centerX" id="2fv-x6-2Ku"/>
+                            <constraint firstItem="4Nw-Wn-uWL" firstAttribute="trailing" secondItem="qOH-ZY-Eb6" secondAttribute="trailing" constant="32" id="9nm-Ke-Iwb"/>
+                            <constraint firstItem="4Nw-Wn-uWL" firstAttribute="trailing" secondItem="cRa-ki-Bdb" secondAttribute="trailing" constant="64" id="CNT-9v-GgV"/>
+                            <constraint firstItem="qOH-ZY-Eb6" firstAttribute="top" secondItem="cRa-ki-Bdb" secondAttribute="bottom" constant="64" id="JOG-ah-WeW"/>
+                            <constraint firstItem="qOH-ZY-Eb6" firstAttribute="centerY" secondItem="wad-Ow-uOU" secondAttribute="centerY" constant="64" id="ZXM-tM-rBW"/>
+                            <constraint firstItem="cRa-ki-Bdb" firstAttribute="leading" secondItem="4Nw-Wn-uWL" secondAttribute="leading" constant="64" id="cy4-by-ZOB"/>
+                            <constraint firstItem="qOH-ZY-Eb6" firstAttribute="leading" secondItem="4Nw-Wn-uWL" secondAttribute="leading" constant="32" id="t4T-89-s4t"/>
+                            <constraint firstItem="RKk-Uv-O5H" firstAttribute="centerX" secondItem="wad-Ow-uOU" secondAttribute="centerX" id="tKd-yu-Piy"/>
+                            <constraint firstItem="4Nw-Wn-uWL" firstAttribute="bottom" secondItem="RKk-Uv-O5H" secondAttribute="bottom" constant="16" id="vAI-7y-PrD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animalImageView" destination="qOH-ZY-Eb6" id="bxg-UV-Tg4"/>
+                        <outlet property="messageLabel" destination="cRa-ki-Bdb" id="kE2-xO-FI6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1Y-ef-zeO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1536" y="84"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
